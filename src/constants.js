@@ -34,10 +34,10 @@ import postgreLogo from './assets/tech_logo/postgre.png';
 import csharpLogo from './assets/tech_logo/csharp.png';
 
 // Experience Section Logo's
-import zonomo from './assets/company_logo/zonomo.png';
+import zonomo from './assets/company_logo/Zonomo.png';
 
 // Education Section Logo's
-import bennett from './assets/education_logo/bennett.png';
+import bennett from './assets/education_logo/Bennett.png';
 import school from './assets/education_logo/School.png';
 
 // Project Section Logo's
