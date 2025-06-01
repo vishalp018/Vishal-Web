@@ -41,7 +41,7 @@ import bennett from './assets/education_logo/Bennett.png';
 import school from './assets/education_logo/School.png';
 
 // Project Section Logo's
-import Shopease  from './assets/work_logo/Shopease';
+import Shopease  from './assets/work_logo/Shopease.png';
 import csprepLogo from './assets/work_logo/cs_prep.png';
 import movierecLogo from './assets/work_logo/movie_rec.png';
 import npmLogo from './assets/work_logo/npm.png';
