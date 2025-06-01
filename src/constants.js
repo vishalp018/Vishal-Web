@@ -41,7 +41,7 @@ import bennett from './assets/education_logo/Bennett.png';
 import school from './assets/education_logo/School.png';
 
 // Project Section Logo's
-import githubdetLogo from './assets/work_logo/github_det.png';
+import Shopease  from './assets/work_logo/Shopease';
 import csprepLogo from './assets/work_logo/cs_prep.png';
 import movierecLogo from './assets/work_logo/movie_rec.png';
 import npmLogo from './assets/work_logo/npm.png';
@@ -186,13 +186,13 @@ export const SkillsInfo = [
   export const projects = [
     {
       id: 0,
-      title: "GitHub Profile Detective",
+      title: "ShopEase - Smart Shopping UI",
       description:
-        "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
-      image: githubdetLogo,
-      tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
-      github: "https://github.com/codingmastr/GitHub-Profile-Search-App-Using-React-JS",
-      webapp: "https://githubprofiledetective.netlify.app/",
+        "A sleek and responsive e-commerce front-end built with React.js, Tailwind CSS, and Vite. ShopEase offers a seamless user experience with features like an auto-rotating banner, product filters, dark/light mode toggle, and smooth sliding testimonials. Optimized for performance with load times under 50ms and deployed via GitHub Pages.",
+      image: Shopease,
+      tags: ["React", "Tailwind", "JavaScript", "API"],
+      github: "https://github.com/vishalp018/ShopEase-Smart-Shopping-UI",
+      webapp: "https://github.com/vishalp018/ShopEase-Smart-Shopping-UI",
     },
     {
       id: 1,
