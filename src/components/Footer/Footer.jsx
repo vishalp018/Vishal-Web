@@ -25,47 +25,32 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-white py-12 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-slate-800/80 bg-dark/50">
+    <footer className="text-white py-12 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-neutral-900 bg-dark/80">
       <div className="container mx-auto text-center">
         <h2 className="text-2xl font-bold gradient-text">Vishal Pal</h2>
-        <p className="text-slate-500 text-sm mt-2">QA Engineer · Full-Stack Developer · SDET</p>
+        <p className="text-neutral-600 text-sm mt-2">QA Engineer · Full-Stack Developer · SDET</p>
 
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleScroll(item.id)}
-              className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
-            >
+            <button key={item.id} onClick={() => handleScroll(item.id)} className="text-neutral-500 hover:text-neutral-200 text-sm transition-colors">
               {item.name}
             </button>
           ))}
-          <a
-            href={RESUME_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
-          >
+          <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-200 text-sm transition-colors">
             Resume
           </a>
         </nav>
 
         <div className="flex justify-center space-x-5 mt-6">
           {socialLinks.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl text-slate-500 hover:text-cyan-400 transition-all hover:scale-110 hover:-translate-y-0.5"
-            >
+            <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className="text-xl text-neutral-600 hover:text-neutral-300 transition-all hover:scale-110">
               {item.icon}
             </a>
           ))}
         </div>
 
-        <div className="section-divider mx-auto mt-8 opacity-40" />
-        <p className="text-sm text-slate-600 mt-6">© 2026 Vishal Pal. All rights reserved.</p>
+        <div className="section-divider mx-auto mt-8 opacity-30" />
+        <p className="text-sm text-neutral-700 mt-6">© 2026 Vishal Pal. All rights reserved.</p>
       </div>
     </footer>
   );

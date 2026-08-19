@@ -19,15 +19,15 @@ const About = () => {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-            className="text-xs sm:text-sm uppercase tracking-[0.35em] text-cyan-400 mb-4 font-semibold"
-            initial={{ opacity: 0, letterSpacing: "0.1em" }}
-            animate={{ opacity: 1, letterSpacing: "0.35em" }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-xs sm:text-sm uppercase tracking-[0.35em] text-neutral-500 mb-4 font-semibold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
           >
             Portfolio · 2026
           </motion.p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-2 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-100 mb-2 leading-tight">
             Hi, I am
           </h1>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold gradient-text mb-5 leading-tight">
@@ -35,33 +35,23 @@ const About = () => {
           </h2>
 
           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 leading-tight min-h-[2.5rem]">
-            <span className="text-slate-400">I am a </span>
-            <span className="text-cyan-400">
+            <span className="text-neutral-500">I am a </span>
+            <span className="text-neutral-200">
               <Typewriter
-                words={[
-                  'QA Engineer',
-                  'Test Automation Engineer',
-                  'Full-Stack Developer',
-                  'SDET',
-                ]}
-                loop
-                cursor
-                cursorStyle="|"
-                typeSpeed={75}
-                deleteSpeed={40}
-                delaySpeed={2200}
+                words={['QA Engineer', 'Test Automation Engineer', 'Full-Stack Developer', 'SDET']}
+                loop cursor cursorStyle="|" typeSpeed={75} deleteSpeed={40} delaySpeed={2200}
               />
             </span>
           </h3>
 
-          <p className="text-base sm:text-lg text-slate-400 mb-8 mt-6 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg text-neutral-400 mb-8 mt-6 leading-relaxed max-w-xl">
             Software Engineer with experience across full-stack development and test
             automation. Currently a QA Intern at{' '}
             <a
               href="https://aistrike.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-500/40"
+              className="text-neutral-200 hover:text-white underline underline-offset-4 decoration-neutral-600"
             >
               AiStrike
             </a>
@@ -95,22 +85,16 @@ const About = () => {
           className="md:w-1/2 flex justify-center md:justify-end"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.15 }}
         >
           <div className="relative">
             <motion.div
-              className="absolute -inset-4 rounded-full opacity-60 blur-2xl"
-              style={{
-                background: "linear-gradient(135deg, rgba(6,182,212,0.3), rgba(139,92,246,0.3), rgba(16,185,129,0.2))",
-              }}
-              animate={{ scale: [1, 1.08, 1], rotate: [0, 5, 0] }}
+              className="absolute -inset-4 rounded-full opacity-40 blur-2xl bg-neutral-700/30"
+              animate={{ scale: [1, 1.06, 1] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
             <Tilt
-              className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-[3px]"
-              style={{
-                background: "linear-gradient(135deg, #06b6d4, #8b5cf6, #10b981)",
-              }}
+              className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-[3px] bg-neutral-700"
               tiltMaxAngleX={12}
               tiltMaxAngleY={12}
               perspective={1200}

@@ -5,11 +5,6 @@ import AnimatedSection from "../AnimatedSection";
 import SectionHeading from "../SectionHeading";
 
 const icons = ["🏆", "💻", "📜"];
-const cardAccents = [
-  "hover:shadow-glow border-cyan-500/20",
-  "hover:shadow-glow-violet border-violet-500/20",
-  "hover:shadow-glow border-emerald-500/20",
-];
 
 const Achievements = () => {
   return (
@@ -22,23 +17,19 @@ const Achievements = () => {
         {achievements.map((item, index) => (
           <AnimatedSection key={item.id} delay={index * 0.12}>
             <motion.div
-              className={`glass-card p-7 h-full text-center ${cardAccents[index]}`}
+              className="glass-card p-7 h-full text-center"
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="w-14 h-14 mx-auto mb-5 rounded-2xl flex items-center justify-center text-2xl"
-                style={{
-                  background: "linear-gradient(135deg, rgba(6,182,212,0.15), rgba(139,92,246,0.15))",
-                  border: "1px solid rgba(6,182,212,0.2)",
-                }}
+                className="w-14 h-14 mx-auto mb-5 rounded-2xl flex items-center justify-center text-2xl bg-neutral-800/80 border border-neutral-700"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
               >
                 {icons[index]}
               </motion.div>
-              <h3 className="text-lg font-bold text-slate-100 mb-2">{item.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-bold text-neutral-100 mb-2">{item.title}</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
             </motion.div>
           </AnimatedSection>
         ))}

@@ -16,11 +16,11 @@ const App = () => {
   return (
     <div className="bg-dark min-h-screen overflow-x-hidden relative">
       <FloatingParticles />
-      <BlurBlob position={{ top: "20%", left: "10%" }} size={{ width: "40%", height: "40%" }} color="cyan" />
-      <BlurBlob position={{ top: "55%", left: "90%" }} size={{ width: "35%", height: "35%" }} color="violet" />
-      <BlurBlob position={{ top: "80%", left: "25%" }} size={{ width: "30%", height: "30%" }} color="emerald" />
+      <BlurBlob position={{ top: "20%", left: "10%" }} size={{ width: "40%", height: "40%" }} color="dark" />
+      <BlurBlob position={{ top: "55%", left: "90%" }} size={{ width: "35%", height: "35%" }} color="mid" />
+      <BlurBlob position={{ top: "80%", left: "25%" }} size={{ width: "30%", height: "30%" }} color="light" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:20px_30px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_32px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
 
       <div className="relative z-10">
         <Navbar />

@@ -4,11 +4,11 @@ import { SkillsInfo } from "../../constants";
 import AnimatedSection from "../AnimatedSection";
 import SectionHeading from "../SectionHeading";
 
-const categoryColors = [
-  "from-cyan-500/20 to-cyan-500/5 border-cyan-500/30",
-  "from-violet-500/20 to-violet-500/5 border-violet-500/30",
-  "from-emerald-500/20 to-emerald-500/5 border-emerald-500/30",
-  "from-blue-500/20 to-blue-500/5 border-blue-500/30",
+const categoryBorders = [
+  "border-neutral-700/60",
+  "border-neutral-600/50",
+  "border-neutral-700/60",
+  "border-neutral-600/50",
 ];
 
 const Skills = () => (
@@ -24,7 +24,7 @@ const Skills = () => (
       {SkillsInfo.map((category, catIndex) => (
         <AnimatedSection key={category.title} delay={catIndex * 0.1}>
           <motion.div
-            className={`glass-card px-6 py-8 h-full bg-gradient-to-br ${categoryColors[catIndex % categoryColors.length]}`}
+            className={`glass-card px-6 py-8 h-full ${categoryBorders[catIndex % categoryBorders.length]}`}
             whileHover={{ y: -6 }}
             transition={{ duration: 0.3 }}
           >
@@ -36,21 +36,15 @@ const Skills = () => (
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
                   key={skill.name}
-                  className="flex items-center gap-2 bg-dark/60 border border-slate-700/60 rounded-xl py-2.5 px-3 hover:border-cyan-500/40 transition-all duration-300"
+                  className="flex items-center gap-2 bg-dark/60 border border-neutral-800 rounded-xl py-2.5 px-3 hover:border-neutral-600 transition-all duration-300"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: skillIndex * 0.03 }}
-                  whileHover={{ y: -3, scale: 1.03, boxShadow: "0 4px 20px rgba(6,182,212,0.1)" }}
+                  whileHover={{ y: -3, scale: 1.03 }}
                 >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-6 h-6 sm:w-7 sm:h-7 object-contain flex-shrink-0"
-                  />
-                  <span className="text-xs sm:text-sm text-slate-300 font-medium truncate">
-                    {skill.name}
-                  </span>
+                  <img src={skill.logo} alt={`${skill.name} logo`} className="w-6 h-6 sm:w-7 sm:h-7 object-contain flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-neutral-400 font-medium truncate">{skill.name}</span>
                 </motion.div>
               ))}
             </div>

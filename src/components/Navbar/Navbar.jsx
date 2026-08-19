@@ -44,20 +44,20 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6 }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
         isScrolled
-          ? "bg-dark/70 backdrop-blur-2xl shadow-lg shadow-cyan-900/5 border-b border-slate-700/40"
+          ? "bg-dark/80 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-neutral-800/80"
           : "bg-transparent"
       }`}
     >
       <div className="text-white py-4 flex justify-between items-center">
         <button onClick={() => handleMenuItemClick("about")} className="text-lg font-bold group">
-          <span className="text-cyan-400 group-hover:text-violet-400 transition-colors">&lt;</span>
-          <span className="mx-1 text-slate-100 group-hover:text-cyan-300 transition-colors">Vishal</span>
-          <span className="text-violet-400 group-hover:text-emerald-400 transition-colors">/</span>
-          <span className="mx-1 text-slate-100 group-hover:text-cyan-300 transition-colors">Pal</span>
-          <span className="text-cyan-400 group-hover:text-violet-400 transition-colors">&gt;</span>
+          <span className="text-neutral-500 group-hover:text-neutral-300 transition-colors">&lt;</span>
+          <span className="mx-1 text-neutral-100 group-hover:text-white transition-colors">Vishal</span>
+          <span className="text-neutral-600 group-hover:text-neutral-400 transition-colors">/</span>
+          <span className="mx-1 text-neutral-100 group-hover:text-white transition-colors">Pal</span>
+          <span className="text-neutral-500 group-hover:text-neutral-300 transition-colors">&gt;</span>
         </button>
 
         <ul className="hidden md:flex space-x-1">
@@ -66,14 +66,14 @@ const Navbar = () => {
               <button
                 onClick={() => handleMenuItemClick(item.id)}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
-                  activeSection === item.id ? "text-cyan-400" : "text-slate-400 hover:text-slate-100"
+                  activeSection === item.id ? "text-neutral-100" : "text-neutral-500 hover:text-neutral-300"
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-cyan-500/10 border border-cyan-500/25 rounded-lg -z-10"
+                    className="absolute inset-0 bg-white/5 border border-neutral-700 rounded-lg -z-10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -93,15 +93,15 @@ const Navbar = () => {
           >
             Resume
           </motion.a>
-          <a href="https://github.com/vishalp018" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors p-2">
+          <a href="https://github.com/vishalp018" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-200 transition-colors p-2">
             <FaGithub size={22} />
           </a>
-          <a href="https://www.linkedin.com/in/vishalp018/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors p-2">
+          <a href="https://www.linkedin.com/in/vishalp018/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-neutral-200 transition-colors p-2">
             <FaLinkedin size={22} />
           </a>
         </div>
 
-        <button className="md:hidden text-cyan-400" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-neutral-300" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </button>
       </div>
@@ -114,13 +114,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden overflow-hidden"
           >
-            <div className="glass-card mb-4 border-cyan-500/20">
+            <div className="glass-card mb-4">
               <ul className="flex flex-col items-center py-4 space-y-2">
                 {menuItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => handleMenuItemClick(item.id)}
-                      className={`px-6 py-2 text-sm ${activeSection === item.id ? "text-cyan-400" : "text-slate-300"}`}
+                      className={`px-6 py-2 text-sm ${activeSection === item.id ? "text-neutral-100" : "text-neutral-400"}`}
                     >
                       {item.label}
                     </button>
@@ -130,8 +130,8 @@ const Navbar = () => {
                   Resume
                 </a>
                 <div className="flex space-x-6 pt-2">
-                  <a href="https://github.com/vishalp018" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-cyan-400"><FaGithub size={24} /></a>
-                  <a href="https://www.linkedin.com/in/vishalp018/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-cyan-400"><FaLinkedin size={24} /></a>
+                  <a href="https://github.com/vishalp018" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-200"><FaGithub size={24} /></a>
+                  <a href="https://www.linkedin.com/in/vishalp018/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-200"><FaLinkedin size={24} /></a>
                 </div>
               </ul>
             </div>
