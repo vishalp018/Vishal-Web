@@ -1,5 +1,7 @@
 import React from "react";
-import { education } from "../../constants"; // Import the education data
+import { motion } from "framer-motion";
+import { education } from "../../constants";
+import AnimatedSection from "../AnimatedSection";
 
 const Education = () => {
   return (
@@ -7,67 +9,70 @@ const Education = () => {
       id="education"
       className="py-24 px-[5vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
-      {/* Section Title */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are the details of my academic background.
+      <AnimatedSection className="text-center mb-20">
+        <h2 className="text-4xl font-bold text-white">Education</h2>
+        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full" />
+        <p className="text-gray-400 mt-4 text-lg font-medium max-w-2xl mx-auto">
+          My academic journey and the foundation behind my technical growth
         </p>
-      </div>
+      </AnimatedSection>
 
-      {/* Timeline Container */}
-      <div className="relative">
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white z-0"></div>
+      <div className="relative max-w-6xl mx-auto">
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500/80 via-purple-400/40 to-transparent z-0 hidden sm:block" />
 
         {education.map((edu, index) => {
           const isLeft = index % 2 === 0;
 
           return (
-            <div
-              key={edu.id}
-              className={`mb-20 flex flex-col sm:flex-row items-center relative ${
-                isLeft ? "sm:justify-start" : "sm:justify-end"
-              }`}
-            >
-              {/* Spacer for opposite side */}
-              <div className={`hidden sm:block w-1/2 ${isLeft ? "" : "order-2"}`}></div>
-
-              {/* Timeline Dot */}
-              <div className="z-10 absolute left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-gray-400 border-4 border-[#8245ec] rounded-full flex justify-center items-center overflow-hidden">
-                <img
-                  src={edu.img}
-                  alt={edu.school}
-                  className="w-full h-full object-contain p-1"
-                />
-              </div>
-
-              {/* Content Card */}
+            <AnimatedSection key={edu.id} delay={index * 0.1} className="mb-16 last:mb-0">
               <div
-                className={`w-full sm:w-[40vw] mt-16 sm:mt-0 bg-gray-900 border border-white backdrop-blur-md rounded-2xl shadow-2xl shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] p-6 sm:p-8 transform transition-transform duration-300 hover:scale-105 z-20 ${
-                  isLeft ? "sm:ml-auto" : "sm:mr-auto"
+                className={`flex flex-col sm:flex-row items-center relative ${
+                  isLeft ? "sm:justify-start" : "sm:justify-end"
                 }`}
               >
-                <div className="flex items-center space-x-4">
-                  <div className="w-20 h-16 bg-white rounded-md overflow-hidden flex justify-center items-center">
-                    <img
-                      src={edu.img}
-                      alt={edu.school}
-                      className="w-full h-full object-contain p-1"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
-                    <h4 className="text-sm text-gray-300">{edu.school}</h4>
-                    <p className="text-sm text-gray-500 mt-1">{edu.date}</p>
-                  </div>
-                </div>
+                <div className={`hidden sm:block w-1/2 ${isLeft ? "" : "order-2"}`} />
 
-                <p className="mt-4 text-gray-400 font-bold">Grade: {edu.grade}</p>
-                <p className="mt-2 text-gray-400">{edu.desc}</p>
+                <motion.div
+                  className="z-10 absolute left-1/2 transform -translate-x-1/2 w-14 h-14 sm:w-16 sm:h-16 bg-[#0d081f] border-2 border-purple-500 rounded-full flex justify-center items-center overflow-hidden shadow-[0_0_20px_rgba(130,69,236,0.5)]"
+                  whileHover={{ scale: 1.15 }}
+                >
+                  <img
+                    src={edu.img}
+                    alt={edu.school}
+                    className="w-full h-full object-contain p-1.5 bg-white rounded-full"
+                  />
+                </motion.div>
+
+                <motion.div
+                  className={`w-full sm:w-[42%] mt-20 sm:mt-0 bg-gray-900/80 border border-purple-500/20 backdrop-blur-md rounded-2xl p-6 sm:p-7 z-20 ${
+                    isLeft ? "sm:ml-auto" : "sm:mr-auto"
+                  }`}
+                  whileHover={{
+                    scale: 1.02,
+                    borderColor: "rgba(168, 85, 247, 0.5)",
+                    boxShadow: "0 0 30px rgba(130, 69, 236, 0.25)",
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-14 bg-white rounded-xl overflow-hidden flex-shrink-0 flex justify-center items-center">
+                      <img
+                        src={edu.img}
+                        alt={edu.school}
+                        className="w-full h-full object-contain p-1"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{edu.degree}</h3>
+                      <h4 className="text-sm text-purple-400">{edu.school}</h4>
+                      <p className="text-xs text-gray-500 mt-1">{edu.date}</p>
+                    </div>
+                  </div>
+
+                  <p className="mt-3 text-sm font-semibold text-purple-300">Grade: {edu.grade}</p>
+                  <p className="mt-2 text-gray-400 text-sm leading-relaxed">{edu.desc}</p>
+                </motion.div>
               </div>
-            </div>
+            </AnimatedSection>
           );
         })}
       </div>
