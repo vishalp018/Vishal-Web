@@ -10,17 +10,19 @@ import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import BlurBlob from "./components/BlurBlob";
+import FloatingParticles from "./components/FloatingParticles";
 
 const App = () => {
   return (
-    <div className="bg-[#050414] min-h-screen overflow-x-hidden">
-      <BlurBlob position={{ top: "25%", left: "15%" }} size={{ width: "35%", height: "35%" }} />
-      <BlurBlob position={{ top: "60%", left: "85%" }} size={{ width: "30%", height: "30%" }} />
-      <BlurBlob position={{ top: "85%", left: "30%" }} size={{ width: "25%", height: "25%" }} />
+    <div className="bg-dark min-h-screen overflow-x-hidden relative">
+      <FloatingParticles />
+      <BlurBlob position={{ top: "20%", left: "10%" }} size={{ width: "40%", height: "40%" }} color="cyan" />
+      <BlurBlob position={{ top: "55%", left: "90%" }} size={{ width: "35%", height: "35%" }} color="violet" />
+      <BlurBlob position={{ top: "80%", left: "25%" }} size={{ width: "30%", height: "30%" }} color="emerald" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f15_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f15_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:20px_30px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
 
-      <div className="relative">
+      <div className="relative z-10">
         <Navbar />
         <About />
         <Skills />

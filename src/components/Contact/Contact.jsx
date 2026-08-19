@@ -4,13 +4,13 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AnimatedSection from "../AnimatedSection";
+import SectionHeading from "../SectionHeading";
 
 const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("service_i19l0pl", "template_nac8vzp", form.current, "55uPDUN-Pkpu6ZyaG")
       .then(
@@ -18,49 +18,45 @@ const Contact = () => {
           form.current.reset();
           toast.success("Message sent successfully!", { theme: "dark" });
         },
-        () => {
-          toast.error("Failed to send message. Please try again.", { theme: "dark" });
-        }
+        () => toast.error("Failed to send message. Please try again.", { theme: "dark" })
       );
   };
 
+  const inputClass =
+    "w-full p-3.5 rounded-xl bg-dark/80 text-slate-100 border border-slate-700/60 focus:outline-none focus:border-cyan-500/60 focus:shadow-[0_0_0_3px_rgba(6,182,212,0.1)] transition-all placeholder:text-slate-500";
+
   return (
-    <section
-      id="contact"
-      className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
-    >
+    <section id="contact" className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]">
       <ToastContainer />
 
-      <AnimatedSection className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-white">Contact</h2>
-        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full" />
-        <p className="text-gray-400 mt-4 text-lg font-medium">
-          Open to SDE, Full-Stack, and SDET opportunities — let's connect!
-        </p>
+      <AnimatedSection className="w-full">
+        <SectionHeading
+          title="Contact"
+          subtitle="Open to SDE, Full-Stack, and SDET opportunities — let's connect!"
+        />
       </AnimatedSection>
 
       <AnimatedSection delay={0.2} className="w-full max-w-lg">
-        <motion.div
-          className="bg-gray-900/70 p-8 rounded-2xl border border-purple-500/20 backdrop-blur-md"
-          whileHover={{ borderColor: "rgba(168, 85, 247, 0.4)" }}
-        >
-          <h3 className="text-xl font-semibold text-white text-center mb-6">
-            Send a Message
-          </h3>
+        <motion.div className="glass-card p-8 border-cyan-500/20" whileHover={{ borderColor: "rgba(6,182,212,0.35)" }}>
+          <h3 className="text-xl font-bold gradient-text text-center mb-6">Send a Message</h3>
 
           <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-4">
-            {["user_name", "user_email", "subject"].map((field, i) => (
+            {[
+              { name: "user_name", type: "text", placeholder: "Your Name" },
+              { name: "user_email", type: "email", placeholder: "Your Email" },
+              { name: "subject", type: "text", placeholder: "Subject" },
+            ].map((field, i) => (
               <motion.input
-                key={field}
-                type={field === "user_email" ? "email" : "text"}
-                name={field}
-                placeholder={field === "user_name" ? "Your Name" : field === "user_email" ? "Your Email" : "Subject"}
+                key={field.name}
+                type={field.type}
+                name={field.name}
+                placeholder={field.placeholder}
                 required
-                className="w-full p-3.5 rounded-xl bg-[#0d081f] text-white border border-gray-700/50 focus:outline-none focus:border-purple-500 transition-colors"
+                className={inputClass}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.08 }}
               />
             ))}
             <motion.textarea
@@ -68,15 +64,15 @@ const Contact = () => {
               placeholder="Your Message"
               rows="4"
               required
-              className="w-full p-3.5 rounded-xl bg-[#0d081f] text-white border border-gray-700/50 focus:outline-none focus:border-purple-500 transition-colors resize-none"
+              className={`${inputClass} resize-none`}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.24 }}
             />
             <motion.button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3.5 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
+              className="btn-primary w-full py-3.5 rounded-xl"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

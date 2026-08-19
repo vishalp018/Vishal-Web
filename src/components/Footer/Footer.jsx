@@ -25,19 +25,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-white py-10 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-purple-500/10">
+    <footer className="text-white py-12 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-slate-800/80 bg-dark/50">
       <div className="container mx-auto text-center">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Vishal Pal
-        </h2>
-        <p className="text-gray-500 text-sm mt-1">QA Engineer · Full-Stack Developer · SDET</p>
+        <h2 className="text-2xl font-bold gradient-text">Vishal Pal</h2>
+        <p className="text-slate-500 text-sm mt-2">QA Engineer · Full-Stack Developer · SDET</p>
 
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+              className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
             >
               {item.name}
             </button>
@@ -46,7 +44,7 @@ const Footer = () => {
             href={RESUME_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-400 text-sm transition-colors"
+            className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
           >
             Resume
           </a>
@@ -59,16 +57,15 @@ const Footer = () => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl text-gray-400 hover:text-purple-400 transition-all hover:scale-110"
+              className="text-xl text-slate-500 hover:text-cyan-400 transition-all hover:scale-110 hover:-translate-y-0.5"
             >
               {item.icon}
             </a>
           ))}
         </div>
 
-        <p className="text-sm text-gray-500 mt-8">
-          © 2026 Vishal Pal. All rights reserved.
-        </p>
+        <div className="section-divider mx-auto mt-8 opacity-40" />
+        <p className="text-sm text-slate-600 mt-6">© 2026 Vishal Pal. All rights reserved.</p>
       </div>
     </footer>
   );
